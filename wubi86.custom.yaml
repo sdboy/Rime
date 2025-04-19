@@ -1,0 +1,27 @@
+patch:
+  #speller/auto_select: true
+  translator/enable_completion: false
+  translator/enable_user_dict: false
+  translator/enable_sentence: false
+  speller/max_code_length: 4   
+  "speller/auto_clear": max_length
+  key_binder/bindings/+:
+    - { when: has_menu, accept: space, send: space }
+    - { when: composing, accept: space, send: Escape }
+    - { when: composing, accept: Return, send: Escape }
+    - { when: has_menu, accept: semicolon, send: 2 }
+    - { when: has_menu, accept: apostrophe, send: 3 }
+    
+  abc_segmentor/extra_tags: {}
+  
+  switches/@next:
+    name: emoji_suggestion
+    reset: 1
+    states: [ "🈚︎", "🈶️" ]
+  'engine/filters/@before 0':
+    simplifier@emoji_suggestion
+  emoji_suggestion:
+    opencc_config: emoji.json
+    option_name: emoji_suggestion
+    tips: none
+    inherit_comment: false
