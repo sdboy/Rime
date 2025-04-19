@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 patch:
   #speller/auto_select: true
   translator/enable_completion: false
@@ -17,7 +19,7 @@ patch:
   switches/@next:
     name: emoji_suggestion
     reset: 1
-    states: [ "🈚︎", "🈶️" ]
+    states: [ "🈚�?", "🈶�?" ]
   'engine/filters/@before 0':
     simplifier@emoji_suggestion
   emoji_suggestion:
@@ -25,3 +27,14 @@ patch:
     option_name: emoji_suggestion
     tips: none
     inherit_comment: false
+
+  engine/translators/+:
+    - table_translator@custom_phrase
+    - lua_translator@shijian2_translator
+  custom_phrase:
+    dictionary: ""
+    user_dict: wubi86_custom_phrase
+    db_class: stabledb
+    enable_completion: false
+    enable_sentence: false
+    initial_quality: 1000

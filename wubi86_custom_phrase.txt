@@ -1,0 +1,36 @@
+# Rime table
+
+# coding: utf-8
+
+#@/db_name wubi86_custom_phrase.txt
+
+#@/db_type tabledb
+
+#
+
+# 用於【五笔拼音】系列輸入方案
+
+#【小狼毫】0.16.3 以上
+
+#
+
+# 請將該文件以 UTF-8 編碼保存爲
+
+# Rime 用戶文件夾 /wubi86_custom_phrase.txt
+
+#
+
+# 碼表各字段以製表符（Tab）分隔
+
+# 順序爲：文字、編碼、權重（決定重碼的次序、可選）
+
+#
+
+# 雖然文本碼表編輯較爲方便，但不適合導入大量條目
+
+#
+
+# no comment
+
+左子树	dbsc	1
+右子树	dbsc	2

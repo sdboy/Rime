@@ -2,7 +2,7 @@ customization:
   distribution_code_name: Weasel
   distribution_version: 0.16.3
   generator: "Rime::SwitcherSettings"
-  modified_time: "Sat Apr 19 04:56:24 2025"
+  modified_time: "Sun Apr 20 06:59:11 2025"
   rime_version: 1.11.2
 patch:
   "ascii_composer/good_old_caps_lock": true
@@ -14,4 +14,3 @@ patch:
   schema_list:
     - {schema: luna_pinyin_simp}
     - {schema: wubi86}
-    - {schema: tiger}
