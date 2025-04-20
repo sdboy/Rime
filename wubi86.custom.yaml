@@ -29,9 +29,9 @@ patch:
     inherit_comment: false
 
   engine/translators/+:
-    - table_translator@custom_phrase
+    - table_translator@wubi_custom_phrase
     - lua_translator@shijian2_translator
-  custom_phrase:
+  wubi_custom_phrase:
     dictionary: ""
     user_dict: wubi86_custom_phrase
     db_class: stabledb

@@ -10,6 +10,8 @@ patch:
     Caps_Lock: clear
     Shift_L: commit_code
     Shift_R: commit_code
+    Control_L: noop
+    Control_R: noop
   "menu/page_size": 7
   schema_list:
     - {schema: luna_pinyin_simp}
