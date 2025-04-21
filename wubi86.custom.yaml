@@ -19,11 +19,11 @@ patch:
   switches/@next:
     name: emoji_suggestion
     reset: 1
-    states: [ "🈚�?", "🈶�?" ]
+    states: [ "🈚�?", "🈶�?" ]
   'engine/filters/@before 0':
     simplifier@emoji_suggestion
   emoji_suggestion:
-    opencc_config: emoji.json
+    opencc_config: simple_chinese_emoji.json
     option_name: emoji_suggestion
     tips: none
     inherit_comment: false

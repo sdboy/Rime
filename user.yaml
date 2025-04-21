@@ -1,10 +1,11 @@
 var:
-  last_build_time: 1745147670
+  last_build_time: 1745246835
   option:
     full_shape: false
-  previously_selected_schema: wubi86
+  previously_selected_schema: wanxiang
   schema_access_time:
     luna_pinyin_simp: 1745071136
     stroke: 1744979673
-    tiger: 1745019739
-    wubi86: 1745071164
+    tiger: 1745242633
+    wanxiang: 1745247718
+    wubi86: 1745207891

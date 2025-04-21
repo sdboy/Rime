@@ -9,14 +9,14 @@ patch:
   #style/layout/border_width: 2 #边框宽度，默认是0
   #style/layout/border_height: 2 #边框高度，默认是0
 
-  menu/page_size: 9 # 自定义候选个数，可修改。若要改成5个，行首加上#号注释即可（Rime默认就是5个）
+  #menu/page_size: 7 # 自定义候选个数，可修改。若要改成5个，行首加上#号注释即可（Rime默认就是5个）
   #style/horizontal: true # 默认是false竖排显示，删掉行首的#号，可横排显示（横排建议把上面这行注释掉）
   #style/layout/candidate_spacing: 17 #候选框改为横排后,增加 候选与候选 的间距
   #style/layout/hilite_spacing: 8  #候选框改为横排后,增加 标号与候选 的间距
   #style/layout/min_width: 85  #候选框改为横排后,增加最小宽度
   #style/layout/max_width: 1200 #候选框改为横排后，限制最大宽度，超长自动换行
   # 横排显示建议把下面这行也注释掉，换成阿拉伯数字标号
-  menu/alternative_select_labels: [ ㊀, ㊁, ㊂, ㊃, ㊄, ㊅, ㊆, ㊇, ㊈ ]  # 自定义候选序号显示符，可自定修改，如要显示阿拉伯数字，直接注释掉这行（在前面加#号）
+  #menu/alternative_select_labels: [ ㊀, ㊁, ㊂, ㊃, ㊄, ㊅, ㊆, ㊇, ㊈ ]  # 自定义候选序号显示符，可自定修改，如要显示阿拉伯数字，直接注释掉这行（在前面加#号）
   # 以下是备选样式（自行删除#号即可生效，只能生效一种）
   #menu/alternative_select_labels: [ ①,②,③,④,⑤,⑥,⑦,⑧,⑨,⑩ ]
   #menu/alternative_select_labels: [ ❶,❷,❸,❹,❺,❻,❼,❽,❾,❿ ]
@@ -62,3 +62,44 @@ patch:
 
   # 让【 】可以直接上屏（对应的重复上屏的功能也没了）
   #speller/alphabet: ";'zyxwvutsrqponmlkjihgfedcba"
+
+  translator/enable_completion: false
+  translator/enable_user_dict: false
+  translator/enable_sentence: false
+  speller/max_code_length: 4   
+  "speller/auto_clear": max_length
+  key_binder/bindings/+:
+    - { when: has_menu, accept: space, send: space }
+    - { when: composing, accept: space, send: Escape }
+    - { when: composing, accept: Return, send: Escape }
+    - { when: has_menu, accept: semicolon, send: 2 }
+    - { when: has_menu, accept: apostrophe, send: 3 }
+
+  abc_segmentor/extra_tags: {}
+
+  switches/@next:
+    name: emoji_suggestion
+    reset: 1
+    states: [ "馃垰锔?", "馃埗锔?" ]
+  'engine/filters/@before 0':
+    simplifier@emoji_suggestion
+  emoji_suggestion:
+    opencc_config: simple_chinese_emoji.json
+    option_name: emoji_suggestion
+    tips: none
+    inherit_comment: false
+
+  engine/translators/+:
+    - table_translator@wubi_custom_phrase
+    - lua_translator@shijian2_translator
+  wubi_custom_phrase:
+    dictionary: ""
+    user_dict: wubi86_custom_phrase
+    db_class: stabledb
+    enable_completion: false
+    enable_sentence: false
+    initial_quality: 1000
+
+  schema/dependencies/+: 
+    - wanxiang
+  reverse_lookup/dictionary: wanxiang
