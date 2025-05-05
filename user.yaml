@@ -2,10 +2,10 @@ var:
   last_build_time: 1745246835
   option:
     full_shape: false
-  previously_selected_schema: wanxiang
+  previously_selected_schema: tiger
   schema_access_time:
     luna_pinyin_simp: 1745071136
     stroke: 1744979673
-    tiger: 1745242633
-    wanxiang: 1745247718
+    tiger: 1745332264
+    wanxiang: 1745332257
     wubi86: 1745207891
